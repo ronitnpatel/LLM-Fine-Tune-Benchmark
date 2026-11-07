@@ -1,0 +1,28 @@
+seed: 42
+epochs: 1
+smoke_epochs: 1
+smoke_examples: 48
+batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 0.0002
+weight_decay: 0.0
+warmup_ratio: 0.03
+max_grad_norm: 1.0
+max_length: 512
+eval_max_new_tokens: 96
+generation_do_sample: false
+save_strategy: epoch
+logging_steps: 10
+use_gradient_checkpointing: true
+bf16_if_supported: true
+fp16_if_supported: true
+lora:
+  ranks: [4, 8, 16, 32]
+  alpha: 16
+  dropout: 0.05
+  target_modules: auto
+qlora:
+  load_in_4bit: true
+  quant_type: nf4
+  double_quant: true
+  compute_dtype: auto
