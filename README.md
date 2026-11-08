@@ -46,6 +46,8 @@ The dataset is [`databricks/databricks-dolly-15k`](https://huggingface.co/datase
 
 The notebook detects GPU name and memory, reports software versions, resolves model/data revisions, reuses Hugging Face's cache where possible, and records the active configuration. Restarting in a fresh session repeats setup and reuses Drive checkpoints and data artifacts when compatible.
 
+PEFT is pinned to a commit containing the upstream fix for Colab's preinstalled older TorchAO package; this project does not use TorchAO quantization. The exact commit is recorded in `requirements.txt` for reproducibility.
+
 ## Experiments and measurements
 
 - Baseline generation and held-out evaluation.
