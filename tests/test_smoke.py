@@ -1,4 +1,4 @@
-"""Cheap checks for preprocessing and artifact generation; no model/GPU needed."""
+"""Checks for preprocessing and artifact generation"""
 
 from __future__ import annotations
 

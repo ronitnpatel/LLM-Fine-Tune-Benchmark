@@ -9,14 +9,33 @@ secrets.json
 *.pem
 *.key
 *.log
-outputs/
-checkpoints/
+# Local run output and downloaded data/model caches (keep compact results/ artifacts).
+/outputs/
+/checkpoints/
+/models/
+/data/
+/.cache/
+/.hf_cache/
+/.huggingface/
+/wandb/
+/runs/
+/lightning_logs/
+/tensorboard/
+*.tfevents.*
+# Full evaluation dumps contain dataset prompts/references; keep them local.
+/results/sample_outputs/*.json
 *.safetensors
 *.bin
 *.pt
 *.pth
 *.ckpt
 *.gguf
-drive/
+/drive/
+/.venv/
+/venv/
+.coverage
+.coverage.*
+.ruff_cache/
+.mypy_cache/
 .DS_Store
 Thumbs.db

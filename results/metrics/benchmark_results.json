@@ -1,1 +1,2010 @@
-[]
+[
+  {
+    "experiment": "baseline",
+    "run_id": "5080ed8bed6e",
+    "timestamp_utc": "2026-11-10T16:28:27.973380+00:00",
+    "run_mode": "smoke",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 18.13023641999999,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 18.13023641999999,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 60,
+      "split_sizes": {
+        "train": 48,
+        "validation": 6,
+        "test": 6
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 494032768,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "normalized_exact_match": 0.0,
+    "rougeL_f1": 0.25714751538398617,
+    "evaluation_examples": 6,
+    "inference_latency_seconds_mean": 3.9910205706666537,
+    "inference_throughput_tokens_per_second": 21.214289720517296,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "test_loss": 2.276136644341208,
+    "trainable_parameters": 0,
+    "trainable_percent": 0.0
+  },
+  {
+    "experiment": "lora",
+    "run_id": "5080ed8bed6e",
+    "timestamp_utc": "2026-11-10T16:28:27.973380+00:00",
+    "run_mode": "smoke",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 18.13023641999999,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 18.13023641999999,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 60,
+      "split_sizes": {
+        "train": 48,
+        "validation": 6,
+        "test": 6
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "lora",
+    "rank": 8,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 498431872,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 4399104,
+    "total_parameters": 498431872,
+    "trainable_percent": 0.8825888244963597,
+    "train_seconds": 23.997600192999982,
+    "train_seconds_per_epoch": 21.44129021799995,
+    "epoch_seconds_current_session": [
+      21.44129021799995
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.8942680358886719,
+    "train_loss": 2.1984028816223145,
+    "validation_loss": 2.2929985523223877,
+    "test_loss": 1.6563788652420044,
+    "artifact_bytes": 33531594,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 23.3862,
+      "train_samples_per_second": 2.052,
+      "train_steps_per_second": 0.257,
+      "total_flos": 20214010869504.0,
+      "train_loss": 2.1984028816223145,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.0,
+    "rougeL_f1": 0.2405856585057511,
+    "evaluation_examples": 6,
+    "inference_latency_seconds_mean": 3.0519176461666766,
+    "inference_throughput_tokens_per_second": 13.652618287063405,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/5080ed8bed6e/lora"
+  },
+  {
+    "experiment": "qlora",
+    "run_id": "5080ed8bed6e",
+    "timestamp_utc": "2026-11-10T16:28:27.973380+00:00",
+    "run_mode": "smoke",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 18.13023641999999,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 18.13023641999999,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 60,
+      "split_sizes": {
+        "train": 48,
+        "validation": 6,
+        "test": 6
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "qlora",
+    "rank": 8,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 319518592,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.float32",
+    "trainable_parameters": 4399104,
+    "total_parameters": 319518592,
+    "trainable_percent": 1.3767912447485997,
+    "train_seconds": 30.963846831000012,
+    "train_seconds_per_epoch": 28.267913394000004,
+    "epoch_seconds_current_session": [
+      28.267913394000004
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.9280686378479004,
+    "train_loss": 2.2680036226908364,
+    "validation_loss": 2.3751838207244873,
+    "test_loss": 1.6723543405532837,
+    "artifact_bytes": 33531594,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 30.3517,
+      "train_samples_per_second": 1.581,
+      "train_steps_per_second": 0.198,
+      "total_flos": 20214010869504.0,
+      "train_loss": 2.2680036226908364,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.0,
+    "rougeL_f1": 0.32944693212640636,
+    "evaluation_examples": 6,
+    "inference_latency_seconds_mean": 3.8620065884999804,
+    "inference_throughput_tokens_per_second": 10.788864729215849,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/5080ed8bed6e/qlora"
+  },
+  {
+    "experiment": "full_finetuning",
+    "run_id": "5080ed8bed6e",
+    "timestamp_utc": "2026-11-10T16:28:27.973380+00:00",
+    "run_mode": "smoke",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 18.13023641999999,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 18.13023641999999,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 60,
+      "split_sizes": {
+        "train": 48,
+        "validation": 6,
+        "test": 6
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "full",
+    "rank": null,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 494032768,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 494032768,
+    "total_parameters": 494032768,
+    "trainable_percent": 100.0,
+    "train_seconds": 40.213366242000006,
+    "train_seconds_per_epoch": 21.08405861,
+    "epoch_seconds_current_session": [
+      21.08405861
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 4.612824440002441,
+    "train_loss": 3.7462027867635093,
+    "validation_loss": 4.380516052246094,
+    "test_loss": 3.152244806289673,
+    "artifact_bytes": 1003984328,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 39.6612,
+      "train_samples_per_second": 1.21,
+      "train_steps_per_second": 0.151,
+      "total_flos": 19968567260928.0,
+      "train_loss": 3.7462027867635093,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.0,
+    "rougeL_f1": 0.10812726260094681,
+    "evaluation_examples": 6,
+    "inference_latency_seconds_mean": 4.273300999833329,
+    "inference_throughput_tokens_per_second": 22.465068574327965,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/5080ed8bed6e/full_finetuning"
+  },
+  {
+    "experiment": "lora_rank_4",
+    "run_id": "5080ed8bed6e",
+    "timestamp_utc": "2026-11-10T16:28:27.973380+00:00",
+    "run_mode": "smoke",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 18.13023641999999,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 18.13023641999999,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 60,
+      "split_sizes": {
+        "train": 48,
+        "validation": 6,
+        "test": 6
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "lora",
+    "rank": 4,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 496232320,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 2199552,
+    "total_parameters": 496232320,
+    "trainable_percent": 0.4432504517239022,
+    "train_seconds": 29.438818291000075,
+    "train_seconds_per_epoch": 25.829251758000055,
+    "epoch_seconds_current_session": [
+      25.829251758000055
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.8614931106567383,
+    "train_loss": 2.1974913279215493,
+    "validation_loss": 2.2881133556365967,
+    "test_loss": 1.6573432683944702,
+    "artifact_bytes": 24733114,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 27.8102,
+      "train_samples_per_second": 1.726,
+      "train_steps_per_second": 0.216,
+      "total_flos": 20091289065216.0,
+      "train_loss": 2.1974913279215493,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.0,
+    "rougeL_f1": 0.20772225597896152,
+    "evaluation_examples": 6,
+    "inference_latency_seconds_mean": 2.8321922830000212,
+    "inference_throughput_tokens_per_second": 13.358320888177156,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/5080ed8bed6e/lora_rank_4"
+  },
+  {
+    "experiment": "lora_rank_16",
+    "run_id": "5080ed8bed6e",
+    "timestamp_utc": "2026-11-10T16:28:27.973380+00:00",
+    "run_mode": "smoke",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 18.13023641999999,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 18.13023641999999,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 60,
+      "split_sizes": {
+        "train": 48,
+        "validation": 6,
+        "test": 6
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "lora",
+    "rank": 16,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 502830976,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 8798208,
+    "total_parameters": 502830976,
+    "trainable_percent": 1.7497346861940344,
+    "train_seconds": 25.610154722999937,
+    "train_seconds_per_epoch": 22.339571644999978,
+    "epoch_seconds_current_session": [
+      22.339571644999978
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.9598207473754883,
+    "train_loss": 2.198706944783529,
+    "validation_loss": 2.297595500946045,
+    "test_loss": 1.6563397645950317,
+    "artifact_bytes": 51128627,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 24.9431,
+      "train_samples_per_second": 1.924,
+      "train_steps_per_second": 0.241,
+      "total_flos": 20459454478080.0,
+      "train_loss": 2.198706944783529,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.0,
+    "rougeL_f1": 0.19102004147267607,
+    "evaluation_examples": 6,
+    "inference_latency_seconds_mean": 2.7940064298333405,
+    "inference_throughput_tokens_per_second": 13.421586865223082,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/5080ed8bed6e/lora_rank_16"
+  },
+  {
+    "experiment": "lora_rank_32",
+    "run_id": "5080ed8bed6e",
+    "timestamp_utc": "2026-11-10T16:28:27.973380+00:00",
+    "run_mode": "smoke",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 18.13023641999999,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 18.13023641999999,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 60,
+      "split_sizes": {
+        "train": 48,
+        "validation": 6,
+        "test": 6
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "lora",
+    "rank": 32,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 511629184,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 17596416,
+    "total_parameters": 511629184,
+    "trainable_percent": 3.4392909064389885,
+    "train_seconds": 27.583330261000015,
+    "train_seconds_per_epoch": 24.091598775999955,
+    "epoch_seconds_current_session": [
+      24.091598775999955
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 2.0909242630004883,
+    "train_loss": 2.1991219520568848,
+    "validation_loss": 2.284637212753296,
+    "test_loss": 1.6569128036499023,
+    "artifact_bytes": 86321555,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 26.9162,
+      "train_samples_per_second": 1.783,
+      "train_steps_per_second": 0.223,
+      "total_flos": 20950341695232.0,
+      "train_loss": 2.1991219520568848,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.0,
+    "rougeL_f1": 0.20444608836448527,
+    "evaluation_examples": 6,
+    "inference_latency_seconds_mean": 3.6808794101666726,
+    "inference_throughput_tokens_per_second": 12.58757165620792,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/5080ed8bed6e/lora_rank_32"
+  },
+  {
+    "experiment": "baseline",
+    "run_id": "83940cef498c",
+    "timestamp_utc": "2026-11-10T16:37:58.899185+00:00",
+    "run_mode": "full",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 5.716593533000037,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 5.716593533000037,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 1200,
+      "split_sizes": {
+        "train": 960,
+        "validation": 120,
+        "test": 120
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 494032768,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "normalized_exact_match": 0.016666666666666666,
+    "rougeL_f1": 0.19170630401162386,
+    "evaluation_examples": 120,
+    "inference_latency_seconds_mean": 3.042047522966674,
+    "inference_throughput_tokens_per_second": 27.256861058437526,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "test_loss": 2.2895187969924504,
+    "trainable_parameters": 0,
+    "trainable_percent": 0.0
+  },
+  {
+    "experiment": "lora",
+    "run_id": "83940cef498c",
+    "timestamp_utc": "2026-11-10T16:37:58.899185+00:00",
+    "run_mode": "full",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 5.716593533000037,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 5.716593533000037,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 1200,
+      "split_sizes": {
+        "train": 960,
+        "validation": 120,
+        "test": 120
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "lora",
+    "rank": 8,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 498431872,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 4399104,
+    "total_parameters": 498431872,
+    "trainable_percent": 0.8825888244963597,
+    "train_seconds": 467.549407817,
+    "train_seconds_per_epoch": 448.72244663000015,
+    "epoch_seconds_current_session": [
+      448.72244663000015
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.8942837715148926,
+    "train_loss": 1.923887554804484,
+    "validation_loss": 1.7604361772537231,
+    "test_loss": 1.7604860067367554,
+    "artifact_bytes": 33531594,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 466.9821,
+      "train_samples_per_second": 2.056,
+      "train_steps_per_second": 0.257,
+      "total_flos": 380616412429824.0,
+      "train_loss": 1.923887554804484,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.041666666666666664,
+    "rougeL_f1": 0.3158451847249154,
+    "evaluation_examples": 120,
+    "inference_latency_seconds_mean": 3.4038274916333324,
+    "inference_throughput_tokens_per_second": 14.020980827409405,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/83940cef498c/lora"
+  },
+  {
+    "experiment": "qlora",
+    "run_id": "83940cef498c",
+    "timestamp_utc": "2026-11-10T16:37:58.899185+00:00",
+    "run_mode": "full",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 5.716593533000037,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 5.716593533000037,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 1200,
+      "split_sizes": {
+        "train": 960,
+        "validation": 120,
+        "test": 120
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "qlora",
+    "rank": 8,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 319518592,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.float32",
+    "trainable_parameters": 4399104,
+    "total_parameters": 319518592,
+    "trainable_percent": 1.3767912447485997,
+    "train_seconds": 578.5430458239998,
+    "train_seconds_per_epoch": 555.508094154,
+    "epoch_seconds_current_session": [
+      555.508094154
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.928084373474121,
+    "train_loss": 1.987983194986979,
+    "validation_loss": 1.8313851356506348,
+    "test_loss": 1.8119217157363892,
+    "artifact_bytes": 33531594,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 577.809,
+      "train_samples_per_second": 1.661,
+      "train_steps_per_second": 0.208,
+      "total_flos": 380616412429824.0,
+      "train_loss": 1.987983194986979,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.05,
+    "rougeL_f1": 0.3075523910693928,
+    "evaluation_examples": 120,
+    "inference_latency_seconds_mean": 4.5802567265417,
+    "inference_throughput_tokens_per_second": 11.420393322107182,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/83940cef498c/qlora"
+  },
+  {
+    "experiment": "full_finetuning",
+    "run_id": "83940cef498c",
+    "timestamp_utc": "2026-11-10T16:37:58.899185+00:00",
+    "run_mode": "full",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 5.716593533000037,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 5.716593533000037,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 1200,
+      "split_sizes": {
+        "train": 960,
+        "validation": 120,
+        "test": 120
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "full",
+    "rank": null,
+    "error": null,
+    "traceback": null,
+    "failure_class": null,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 494032768,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 494032768,
+    "total_parameters": 494032768,
+    "trainable_percent": 100.0,
+    "train_seconds": 30.915129999000044,
+    "train_seconds_per_epoch": null,
+    "epoch_seconds_current_session": [],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.663571834564209,
+    "train_loss": 0.0,
+    "validation_loss": 2.6149935722351074,
+    "test_loss": 2.4998483657836914,
+    "artifact_bytes": 1003984328,
+    "checkpoint_resumed": true,
+    "trainer_state": {
+      "train_runtime": 0.0065,
+      "train_samples_per_second": 147330.108,
+      "train_steps_per_second": 18416.263,
+      "total_flos": 375994872135168.0,
+      "train_loss": 0.0,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.041666666666666664,
+    "rougeL_f1": 0.2633734624089332,
+    "evaluation_examples": 120,
+    "inference_latency_seconds_mean": 1.776978976999998,
+    "inference_throughput_tokens_per_second": 26.341523416533583,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/83940cef498c/full_finetuning"
+  },
+  {
+    "experiment": "lora_rank_4",
+    "run_id": "83940cef498c",
+    "timestamp_utc": "2026-11-10T17:36:53.559921+00:00",
+    "run_mode": "full",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 40.872686464,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 40.872686464,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 1200,
+      "split_sizes": {
+        "train": 960,
+        "validation": 120,
+        "test": 120
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "lora",
+    "rank": 4,
+    "error": null,
+    "traceback": null,
+    "failure_class": null,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 496232320,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 2199552,
+    "total_parameters": 496232320,
+    "trainable_percent": 0.4432504517239022,
+    "train_seconds": 456.58341217,
+    "train_seconds_per_epoch": 437.9268177980001,
+    "epoch_seconds_current_session": [
+      437.9268177980001
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.8615078926086426,
+    "train_loss": 1.9241855939229329,
+    "validation_loss": 1.7611104249954224,
+    "test_loss": 1.7588694095611572,
+    "artifact_bytes": 24733114,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 455.9501,
+      "train_samples_per_second": 2.105,
+      "train_steps_per_second": 0.263,
+      "total_flos": 378305642282496.0,
+      "train_loss": 1.9241855939229329,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.041666666666666664,
+    "rougeL_f1": 0.31139765451556844,
+    "evaluation_examples": 120,
+    "inference_latency_seconds_mean": 3.6666892605833272,
+    "inference_throughput_tokens_per_second": 13.71355186104149,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/83940cef498c/lora_rank_4"
+  },
+  {
+    "experiment": "lora_rank_16",
+    "run_id": "83940cef498c",
+    "timestamp_utc": "2026-11-10T17:36:53.559921+00:00",
+    "run_mode": "full",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 40.872686464,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 40.872686464,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 1200,
+      "split_sizes": {
+        "train": 960,
+        "validation": 120,
+        "test": 120
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "lora",
+    "rank": 16,
+    "error": null,
+    "traceback": null,
+    "failure_class": null,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 502830976,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 8798208,
+    "total_parameters": 502830976,
+    "trainable_percent": 1.7497346861940344,
+    "train_seconds": 449.35259970799984,
+    "train_seconds_per_epoch": 430.5442120429998,
+    "epoch_seconds_current_session": [
+      430.5442120429998
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 1.9598355293273926,
+    "train_loss": 1.9237486044565837,
+    "validation_loss": 1.7567116022109985,
+    "test_loss": 1.7597531080245972,
+    "artifact_bytes": 51128627,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 448.7142,
+      "train_samples_per_second": 2.139,
+      "train_steps_per_second": 0.267,
+      "total_flos": 385237952724480.0,
+      "train_loss": 1.9237486044565837,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.041666666666666664,
+    "rougeL_f1": 0.3167175886934303,
+    "evaluation_examples": 120,
+    "inference_latency_seconds_mean": 3.3300016328833313,
+    "inference_throughput_tokens_per_second": 13.936429602633554,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/83940cef498c/lora_rank_16"
+  },
+  {
+    "experiment": "lora_rank_32",
+    "run_id": "83940cef498c",
+    "timestamp_utc": "2026-11-10T17:36:53.559921+00:00",
+    "run_mode": "full",
+    "selected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "selection_reason": "primary model selected",
+    "hardware": {
+      "available": true,
+      "name": "Tesla T4",
+      "total_memory_gib": 14.56,
+      "free_memory_gib": 14.46,
+      "selection_reason": "primary model selected",
+      "primary_model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "fallback_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "full_finetuning_preflight": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "fits": true,
+          "reason": "scratch full-parameter optimizer step completed",
+          "peak_gpu_memory_gib": 4.657374382019043,
+          "probe_seconds": 40.872686464,
+          "sequence_length": 512
+        }
+      }
+    },
+    "full_finetuning_preflight": {
+      "Qwen/Qwen2.5-0.5B-Instruct": {
+        "fits": true,
+        "reason": "scratch full-parameter optimizer step completed",
+        "peak_gpu_memory_gib": 4.657374382019043,
+        "probe_seconds": 40.872686464,
+        "sequence_length": 512
+      }
+    },
+    "dataset_id": "databricks/databricks-dolly-15k",
+    "dataset_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+    "dataset_metadata": {
+      "dataset_id": "databricks/databricks-dolly-15k",
+      "requested_revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "rows_valid": 14996,
+      "rows_selected": 1200,
+      "split_sizes": {
+        "train": 960,
+        "validation": 120,
+        "test": 120
+      },
+      "seed": 42
+    },
+    "seed": 42,
+    "max_length": 512,
+    "python_version": "3.13.16",
+    "package_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "peft": "0.21.3.dev0",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "rouge-score": "0.1.2"
+    },
+    "training_config": {
+      "seed": 42,
+      "epochs": 1,
+      "smoke_epochs": 1,
+      "smoke_examples": 48,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "max_grad_norm": 1.0,
+      "max_length": 512,
+      "eval_max_new_tokens": 96,
+      "generation_do_sample": false,
+      "save_strategy": "epoch",
+      "logging_steps": 10,
+      "use_gradient_checkpointing": true,
+      "bf16_if_supported": true,
+      "fp16_if_supported": true,
+      "lora": {
+        "ranks": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": "auto"
+      },
+      "qlora": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "auto"
+      }
+    },
+    "generation_config": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    },
+    "status": "completed",
+    "method": "lora",
+    "rank": 32,
+    "error": null,
+    "traceback": null,
+    "failure_class": null,
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "tokenizer_revision": null,
+    "parameter_count": 511629184,
+    "config_model_type": "qwen2",
+    "config_architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "dtype": "torch.bfloat16",
+    "trainable_parameters": 17596416,
+    "total_parameters": 511629184,
+    "trainable_percent": 3.4392909064389885,
+    "train_seconds": 448.4599665989999,
+    "train_seconds_per_epoch": 428.5636240829999,
+    "epoch_seconds_current_session": [
+      428.5636240829999
+    ],
+    "train_seconds_scope": "active training invocation; earlier sessions are excluded after resume",
+    "peak_gpu_memory_gib": 2.0909390449523926,
+    "train_loss": 1.9240869204203288,
+    "validation_loss": 1.7546526193618774,
+    "test_loss": 1.7576090097427368,
+    "artifact_bytes": 86321555,
+    "checkpoint_resumed": false,
+    "trainer_state": {
+      "train_runtime": 447.8076,
+      "train_samples_per_second": 2.144,
+      "train_steps_per_second": 0.268,
+      "total_flos": 394481033313792.0,
+      "train_loss": 1.9240869204203288,
+      "epoch": 1.0
+    },
+    "normalized_exact_match": 0.041666666666666664,
+    "rougeL_f1": 0.31251935065540315,
+    "evaluation_examples": 120,
+    "inference_latency_seconds_mean": 3.262986073933329,
+    "inference_throughput_tokens_per_second": 14.074531413687659,
+    "generation_max_new_tokens": 96,
+    "generation_do_sample": false,
+    "checkpoint_dir": "/content/drive/MyDrive/llm-finetuning-benchmark/checkpoints/83940cef498c/lora_rank_32"
+  }
+]

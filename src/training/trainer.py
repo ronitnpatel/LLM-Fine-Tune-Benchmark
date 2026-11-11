@@ -1,4 +1,4 @@
-"""Shared Trainer construction and measurement helpers."""
+""" Trainer construction and measurement helpers."""
 
 from __future__ import annotations
 
@@ -107,6 +107,7 @@ def train_experiment(method: str, model: Any, tokenizer: Any, train_dataset: Any
     trainer.add_callback(epoch_timer)
     started = time.perf_counter()
     resume = any(Path(output_dir).glob("checkpoint-*"))
+    # Preserve progress after an interrupted Colab session when a checkpoint exists.
     result = trainer.train(resume_from_checkpoint=True if resume else None)
     elapsed = time.perf_counter() - started
     eval_metrics = trainer.evaluate()

@@ -26,15 +26,19 @@ def gpu_info() -> dict[str, Any]:
     }
 
 
-def choose_model(primary: str, fallback: str, minimum_free_gib: float) -> tuple[str, dict[str, Any]]:
+def choose_model(primary: str, fallback: str | None, minimum_free_gib: float) -> tuple[str, dict[str, Any]]:
     """Select one model for all experiments before the baseline is evaluated."""
     info = gpu_info()
     selected = primary
     reason = "primary model selected"
-    if not info["available"]:
+    if not info["available"] and fallback and fallback != primary:
         selected, reason = fallback, "no CUDA GPU detected; selecting smaller fallback"
-    elif info["free_memory_gib"] < minimum_free_gib:
+    elif info["free_memory_gib"] < minimum_free_gib and fallback and fallback != primary:
         selected, reason = fallback, f"free VRAM below {minimum_free_gib:g} GiB preflight threshold"
+    elif not info["available"]:
+        reason = "primary model selected; CUDA is unavailable and training cannot proceed"
+    elif info["free_memory_gib"] < minimum_free_gib:
+        reason = "primary model retained; no fallback configured, scratch preflight will determine feasibility"
     return selected, {**info, "selection_reason": reason, "primary_model": primary, "fallback_model": fallback}
 
 
@@ -86,6 +90,7 @@ def preflight_full_finetuning(model_id: str, revision: str = "main", sequence_le
             model.gradient_checkpointing_enable()
         if hasattr(model, "enable_input_require_grads"):
             model.enable_input_require_grads()
+        # Synthetic tokens exercise the full optimizer memory path without touching benchmark data.
         input_ids = torch.randint(
             low=0,
             high=int(model.config.vocab_size),

@@ -55,6 +55,7 @@ def tokenize_example(example: Mapping[str, str], tokenizer: Any, max_length: int
     encoded = tokenizer(full_text, add_special_tokens=False, truncation=True, max_length=max_length)
     input_ids = encoded["input_ids"]
     labels = list(input_ids)
+    # Train on the answer while keeping the prompt as context only.
     labels[: min(len(prompt_ids), len(labels))] = [-100] * min(len(prompt_ids), len(labels))
     if not any(label != -100 for label in labels):
         labels[-1:] = input_ids[-1:]

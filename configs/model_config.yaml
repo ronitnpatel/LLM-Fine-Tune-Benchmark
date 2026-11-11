@@ -1,8 +1,8 @@
 primary_model: Qwen/Qwen2.5-0.5B-Instruct
-fallback_model: HuggingFaceTB/SmolLM2-135M-Instruct
-revision: main  # Resolve and record the actual commit SHA at run time.
+fallback_model: null  # Keep every comparison on Qwen2.5-0.5B; stop if its preflight fails.
+revision: 7ae557604adf67be50417f59c2c2f167def9a775
 trust_remote_code: false
 prefer_full_finetune: true
 # Conservative preflight budget for full fine-tuning; the notebook records actual VRAM.
 full_finetune_min_free_gib: 10
-fallback_on_preflight_failure: true
+fallback_on_preflight_failure: false

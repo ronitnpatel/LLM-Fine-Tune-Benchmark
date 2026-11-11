@@ -1,6 +1,6 @@
 dataset_id: databricks/databricks-dolly-15k
 dataset_config: null
-revision: main  # Resolve and record the actual dataset commit at run time.
+revision: bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a
 license: CC-BY-SA-3.0
 seed: 42
 max_examples: 1200
